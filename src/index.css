@@ -1,9 +1,26 @@
+:root {
+    --var-first-color1: white;
+    --var-second-color2: gray;
+    --var-prime-color: skyblue;
+    --var-second-color: lightgreen;
+    --var-error-color: red;
+    --var-warning-color: orange;
+    --var-success-color: green;
+    --var-background-color: black;
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    color: var(--var-first-color1);
 }
 
 html, body {
     width: 100%;
     height: 100%;
+}
+
+.text-shadow {
+    text-shadow: 0px 0px 5px var(--var-second-color2);
 }

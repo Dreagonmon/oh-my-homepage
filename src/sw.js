@@ -3,7 +3,7 @@ import { registerRoute, Route } from "workbox-routing";
 
 const cachedRoute = new Route(({ url, sameOrigin }) => {
   // console.log(url, sameOrigin);
-  return sameOrigin && !([ "127.0.0.1", "localhost" ].includes(url.hostname));
+  return sameOrigin && !([ "127.0.0.1", "localhost" ].includes(url.hostname)) && !url.pathname.startsWith("/api");
 }, new StaleWhileRevalidate({
   cacheName: "cached-route"
 }));
@@ -15,5 +15,5 @@ self.addEventListener("install", (event) => {
 });
 self.addEventListener("activate", (event) => {
   event.waitUntil(self.clients.claim());
-  console.log("Service Worker Actived.")
+  console.log("Service Worker Actived.");
 });

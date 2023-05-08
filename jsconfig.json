@@ -4,6 +4,7 @@
         "jsx": "react",
         "jsxFactory": "h",
         "jsxFragmentFactory": "Fragment",
+        "lib": [ "ESNext", "DOM", "WebWorker" ],
         "module": "ESNext",
         "moduleResolution": "nodenext",
         "checkJs": true

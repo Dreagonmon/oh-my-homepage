@@ -1,6 +1,6 @@
 import { action } from "nanostores";
 import { persistentAtom } from "@nanostores/persistent";
-import { LANG_DEFAULT, LANG_MAP } from "../i18n/index.js";
+import { LANG_DEFAULT, LANG_MAP } from "../i18n/const.js";
 
 const getFirstLanguage = () => {
     try {

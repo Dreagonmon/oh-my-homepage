@@ -1,6 +1,6 @@
 :root {
-    --var-first-color1: white;
-    --var-second-color2: gray;
+    --var-text-color1: white;
+    --var-text-color2: gray;
     --var-prime-color: darkviolet;
     --var-second-color: darkslateblue;
     --var-error-color: red;
@@ -14,7 +14,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--var-first-color1);
+    color: var(--var-text-color1);
+    background-color: var(--var-background-color);
+    user-zoom: none;
+}
+
+*:not(input, textarea) {
+    user-select: none;
 }
 
 html, body {

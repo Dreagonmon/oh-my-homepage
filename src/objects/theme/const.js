@@ -1,5 +1,5 @@
-export const STYLE_VAR_TEXT_COLOR1 = "--var-first-color1";
-export const STYLE_VAR_TEXT_COLOR2 = "--var-second-color2";
+export const STYLE_VAR_TEXT_COLOR1 = "--var-text-color1";
+export const STYLE_VAR_TEXT_COLOR2 = "--var-text-color2";
 export const STYLE_VAR_PRIME_COLOR = "--var-prime-color";
 export const STYLE_VAR_SECOND_COLOR = "--var-second-color";
 export const STYLE_VAR_ERROR_COLOR = "--var-error-color";

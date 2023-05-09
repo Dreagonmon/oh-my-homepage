@@ -1,14 +1,6 @@
 import { langAtom } from "../store/lang.js";
 import { useStore } from "@nanostores/preact";
-import { TRANSLATE as T_DEFAULT } from "./tDefault.js";
-import { TRANSLATE as T_ZH } from "./tZh.js";
-
-export const LANG_DEFAULT = "default";
-
-export const LANG_MAP = {
-    "zh": T_ZH,
-    [LANG_DEFAULT]: T_DEFAULT,
-};
+import { LANG_DEFAULT, LANG_MAP } from "./const.js";
 
 /**
  * @typedef {Object} TranslateItemObject

@@ -18,8 +18,8 @@ const getBuildOptions = () => {
         jsxFactory: "h",
         jsxFragment: "Fragment",
         bundle: true,
-        sourcemap: "linked",
         minify: true,
+        sourcemap: false,
         format: "esm",
         target: "esnext",
         outdir: BUILD_DIR,
@@ -50,6 +50,7 @@ const getServeOptions = () => {
         await build(getBuildOptions());
     } else if (cmd == "serve") {
         const opt = getBuildOptions();
+        opt.sourcemap = "linked";
         opt.minify = false;
         opt.minifyIdentifiers = false;
         opt.minifySyntax = false;

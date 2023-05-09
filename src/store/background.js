@@ -14,7 +14,7 @@ export const backgroundStyleTextAtom = atom("");
 
 export const setBackground = action(backgroundStyleTextAtom, "setBackground",
     /**
-     * @param {import("nanostores").WritableAtom} store 
+     * @param {import("nanostores").WritableAtom<string>} store 
      * @param {string} bgType
      * @param {string} bgParam
      * @returns {Promise<void>}
@@ -41,6 +41,8 @@ onMount(backgroundStyleTextAtom, (payload) => {
             backgroundConfigParametersAtom.get(),
         );
         styleInited = true;
-        backgroundStyleTextAtom.set(styleText);
+        if (styleText !== backgroundStyleTextAtom.get()) {
+            backgroundStyleTextAtom.set(styleText);
+        }
     });
 });

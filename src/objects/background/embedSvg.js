@@ -65,15 +65,24 @@ const EMBED_SVG_TEMPLATE_MAP = {
 export const parseStyleForEmbedSvg = (parameter) => {
     /** @type {EmbedSVGConfig} */
     const config = JSON.parse(parameter);
-    const template = EMBED_SVG_TEMPLATE_MAP[config.svgName];
+    const template = EMBED_SVG_TEMPLATE_MAP[ config.svgName ];
     if (!template) {
         return "";
     }
     let svg = template.svgData;
+    // replace color
+    if (config.colors) {
+        for (const originColor of template.configurableColors) {
+            if (Object.hasOwnProperty.call(config.colors, originColor)) {
+                const replaceColor = config.colors[ originColor ];
+                svg = svg.replaceAll(originColor, replaceColor);
+            }
+        }
+    }
     const style = [
         `background-image: url("data:image/svg+xml;base64,${encodeURIComponent(btoa(svg))}");`,
         "background-repeat: repeat;",
         "background-position: center;",
     ];
     return style.join(" ");
-}
+};

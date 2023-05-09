@@ -5,4 +5,5 @@ export const STYLE_VAR_SECOND_COLOR = "--var-second-color";
 export const STYLE_VAR_ERROR_COLOR = "--var-error-color";
 export const STYLE_VAR_WARNING_COLOR = "--var-warning-color";
 export const STYLE_VAR_SUCCESS_COLOR = "--var-success-color";
+export const STYLE_VAR_BORDER_COLOR = "--var-border-color";
 export const STYLE_VAR_BACKGROUND_COLOR = "--var-background-color";

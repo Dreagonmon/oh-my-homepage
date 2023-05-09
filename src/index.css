@@ -1,11 +1,12 @@
 :root {
     --var-first-color1: white;
     --var-second-color2: gray;
-    --var-prime-color: skyblue;
-    --var-second-color: lightgreen;
+    --var-prime-color: darkviolet;
+    --var-second-color: darkslateblue;
     --var-error-color: red;
     --var-warning-color: orange;
     --var-success-color: green;
+    --var-border-color: dimgray;
     --var-background-color: black;
 }
 

@@ -1,6 +1,7 @@
 /**
  * @typedef {Object} ThemeConfig
  * @property {Record<string, string>} [colors]
+ * @property {string} [pageTitle]
  */
 
 /**

@@ -1,5 +1,7 @@
 export const STYLE_VAR_TEXT_COLOR1 = "--var-text-color1";
 export const STYLE_VAR_TEXT_COLOR2 = "--var-text-color2";
+export const STYLE_VAR_BUTTON_TEXT_COLOR = "--var-button-text-color";
+export const STYLE_VAR_DISABLE_COLOR = "--var-disable-color";
 export const STYLE_VAR_PRIME_COLOR = "--var-prime-color";
 export const STYLE_VAR_SECOND_COLOR = "--var-second-color";
 export const STYLE_VAR_ERROR_COLOR = "--var-error-color";

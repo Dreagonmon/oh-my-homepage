@@ -1,9 +1,9 @@
-import { h, Fragment } from "preact";
+import { h } from "preact";
 import { useStore } from "@nanostores/preact";
 import { backgroundStyleTextAtom } from "../store/background.js";
 import { themeColorStyleTextAtom, themeConfigAtom } from "../store/theme.js";
 import { useTranslate } from "../i18n/index.js";
-import { useEffect } from "preact/hooks";
+import { useEffect, useMemo } from "preact/hooks";
 import { routerInfoAtom } from "../store/router.js";
 import { routeElement } from "./index.js";
 
@@ -13,6 +13,11 @@ export const App = () => {
     const colorStyleText = useStore(themeColorStyleTextAtom);
     const themeConfig = useStore(themeConfigAtom);
     const routerInfo = useStore(routerInfoAtom);
+
+    /* cache page content */
+    const page = useMemo(() => {
+        return routeElement(routerInfo);
+    }, [routerInfo]);
 
     /* update title */
     useEffect(() => {
@@ -25,6 +30,6 @@ export const App = () => {
 
     const bodyStyle = `width: 100%; height: 100%; overflow: hidden; ${backgroundStyleText} ${colorStyleText}`;
     return <div style={bodyStyle}>
-        {routeElement(routerInfo)}
+        {page}
     </div>;
 };

@@ -16,7 +16,8 @@ export const PageHome = () => {
         </div>
         <div style={{ ...FLEX_FIXED, ...FLEX_H_CENTER, width: "100%", padding: "0.5rem" }}>
             <span style={{ ...FLEX_AUTO }} />
-            <Icon name="settings" style={{ height: "2rem", width: "2rem" }} />
+            <Icon iconName="settings" style={{ height: "2rem", width: "2rem" }} />
+            <Icon iconName="settings" style={{ height: "2rem", width: "2rem" }} />
         </div>
     </div>;
 };

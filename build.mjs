@@ -50,7 +50,8 @@ const getServeOptions = () => {
         await build(getBuildOptions());
     } else if (cmd == "serve") {
         const opt = getBuildOptions();
-        // opt.sourcemap = "linked";
+        await build(opt);
+        opt.sourcemap = "linked";
         opt.minify = false;
         opt.minifyIdentifiers = false;
         opt.minifySyntax = false;

@@ -70,7 +70,7 @@ export const SearchBar1 = () => {
     return <form style={STYLE_CONTAINER} onSubmit={doSearch}>
         <input style={STYLE_INPUT} value={searchText} onInput={onInputSearch} />
         <span style={STYLE_SEARCH_BUTTON} onClick={doSearch}>
-            <Icon name="search" />
+            <Icon iconName="search" />
         </span>
     </form>;
 };

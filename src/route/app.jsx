@@ -6,6 +6,7 @@ import { useTranslate } from "../i18n/index.js";
 import { useEffect, useMemo } from "preact/hooks";
 import { routerInfoAtom } from "../store/router.js";
 import { routeElement } from "./index.js";
+import { ModalContainer } from "../components/modal/container.jsx";
 
 export const App = () => {
     const t = useTranslate();
@@ -31,5 +32,6 @@ export const App = () => {
     const bodyStyle = `width: 100%; height: 100%; overflow: hidden; ${backgroundStyleText} ${colorStyleText}`;
     return <div style={bodyStyle}>
         {page}
+        <ModalContainer />
     </div>;
 };

@@ -5,7 +5,7 @@ const TEXT_ENABLE = "enable";
 
 /** @type {import("nanostores").WritableAtom<string>} */
 const debugSavedAtom = persistentAtom("_app_debug_", "");
-export const debugAtom = computed([debugSavedAtom], (debugValue) => {
+export const debugAtom = computed([ debugSavedAtom ], (debugValue) => {
     return debugValue === TEXT_ENABLE;
 });
 
@@ -22,3 +22,9 @@ export const setDebug = action(debugSavedAtom, "setDebug",
         }
     },
 );
+
+if (debugAtom.get()) {
+    window[ "testpage" ] = () => {
+        window[ "_goto" ]("test");
+    };
+}

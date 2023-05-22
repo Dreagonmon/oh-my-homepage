@@ -24,7 +24,10 @@ export const setDebug = action(debugSavedAtom, "setDebug",
 );
 
 if (debugAtom.get()) {
-    window[ "testpage" ] = () => {
-        window[ "_goto" ]("test");
+    window[ "startDebug" ] = () => {
+        setDebug(true);
+    };
+    window[ "stopDebug" ] = () => {
+        setDebug(false);
     };
 }

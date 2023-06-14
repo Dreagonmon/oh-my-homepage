@@ -24,7 +24,7 @@ export const PageHome = () => {
             {debug ? <Icon
                 iconName="github"
                 style={{ marginLeft: "1rem", height: "2rem", width: "2rem", cursor: "pointer" }}
-                onClick={() => { goto("test") }}
+                onClick={() => { goto("test"); }}
             /> : undefined}
         </div>
     </div>;

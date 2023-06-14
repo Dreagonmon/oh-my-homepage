@@ -7,6 +7,7 @@ import { useEffect, useMemo } from "preact/hooks";
 import { routerInfoAtom } from "../store/router.js";
 import { routeElement } from "./index.js";
 import { ModalContainer } from "../components/modal/container.jsx";
+import { DialogImplement } from "../components/modal/dialog.jsx";
 
 export const App = () => {
     const t = useTranslate();
@@ -18,7 +19,7 @@ export const App = () => {
     /* cache page content */
     const page = useMemo(() => {
         return routeElement(routerInfo);
-    }, [routerInfo]);
+    }, [ routerInfo ]);
 
     /* update title */
     useEffect(() => {
@@ -33,5 +34,6 @@ export const App = () => {
     return <div style={bodyStyle}>
         {page}
         <ModalContainer />
+        <DialogImplement />
     </div>;
 };

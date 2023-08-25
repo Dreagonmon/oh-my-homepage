@@ -59,17 +59,29 @@ const formatText = (fmt, params) => {
 };
 
 /**
+ * translate text, if params[0]
  * @param {string} lang 
  * @param {Array<string>} textPath 
- * @param  {Array<TranslateParameter>} params 
+ * @param  {...TranslateParameter} params 
  */
-export const getTranslatedText = (lang, textPath, params) => {
+export const getTranslatedText = (lang, textPath, ...params) => {
     const translateDatabase = LANG_MAP[ lang ] ?? LANG_MAP[ LANG_DEFAULT ];
     const translateItem = findPathInObject(textPath, translateDatabase) ?? findPathInObject(textPath, LANG_MAP[ LANG_DEFAULT ]);
     if (typeof translateItem === "string") {
         return formatText(translateItem, params);
     } else if (objectHasKey(translateItem, "one")) {
-        if (objectHasKey(translateItem, "many") && params.length > 0 && typeof params[ 0 ] === "number" && params[ 0 ] > 1) {
+        if (
+            // translate item support many
+            objectHasKey(translateItem, "many")
+            && (
+                // have params
+                params.length > 0
+                // params 0 is number
+                && typeof params[ 0 ] === "number"
+                // number > 1
+                && params[ 0 ] > 1
+            )
+        ) {
             return formatText(translateItem.many, params);
         }
         return formatText(translateItem.one, params);
@@ -84,10 +96,10 @@ export const useTranslate = () => {
     /**
      * Get translated text.
      * @param {Array<string>} textPath text path, e.g. [ "index", "title" ]
-     * @param  {...Array<TranslateParameter>} params  replace "{0}", "{1}", "{2}", ... in the translated text.
+     * @param {TranslateParameter[]} params  replace "{0}", "{1}", "{2}", ... in the translated text.
      * @returns {string}
      */
     return (textPath, ...params) => {
-        return getTranslatedText(lang, textPath, params);
+        return getTranslatedText(lang, textPath, ...params);
     };
 };

@@ -1,3 +1,8 @@
-# Preact template
+# Oh My Homepage
 
-ESBuild + Preact + ServiceWorker
+### Development Informations
+> To change the debug store, goto browser's console.
+>
+> * startDebug()
+> * stopDebug()
+

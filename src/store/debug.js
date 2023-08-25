@@ -23,11 +23,11 @@ export const setDebug = action(debugSavedAtom, "setDebug",
     },
 );
 
-if (debugAtom.get()) {
+(() => {
     window[ "startDebug" ] = () => {
         setDebug(true);
     };
     window[ "stopDebug" ] = () => {
         setDebug(false);
     };
-}
+})();
